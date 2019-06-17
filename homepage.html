@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<title>GleWare</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="homepage.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sedgwick Ave">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Condensed">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.w3-sidebar a, header {font-family: "Sedgwick Ave", sans-serif}
+body,h1,h2,h3,h4,h5,h6,input {font-family: "Roboto Condensed", sans-serif;}
+* {box-sizing: border-box}
+.mySlides {display: none}
+</style>
+<body class="w3-content" style="max-width:1500px">
+</style>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-block-start:0px">
+  
+  <!-- Top header -->
+  <header class="w3-container w3-xlarge">
+    <div class="header1" onclick="window.location.href='homepage.html'">
+      <img src="https://i.imgur.com/YRcaIt4.jpg"
+      style="width:10%; height:10%">
+    <p class="w3-right">
+      <i class="fa fa-heart" style="margin-right: 0.6em"></i>
+      <i class="fa fa-shopping-cart" style="margin-right: 0.4em"></i>
+    </header>
+    <p class="w3-animate-zoom search w3-right w3-padding" 
+      <i class="fa fa-search"></i>
+      <span class="fa fa-search"></span>
+      <input placeholder="Search term">
+    <div class="topnav">
+      <a href="Women.html">Women</a>
+      <a href="Men.html">Men</a>
+      <a href="About.html">About Us</a>  
+    </div>
+    <style>
+      #seq {
+        background-color: red;
+        text-align: center;
+        color: white;
+      }
+
+    </style>
+    <div id="seq"></div>
+
+    <!-- Changing mentions -->
+    <script>
+      var txt = ["50% off on Women's dresses", "Up to 50% off Men's Apparels", "140 New styles in stock"];
+      var gFirst = true;
+      txtSeq(0);
+  
+      function txtSeq(p) {
+          if (gFirst) {
+              wait = 0;
+              gFirst = false;
+          }
+          else {
+              wait = 2000;
+          }
+          if (txt.length > p) {
+              setTimeout(function () {
+                  var sequenceDiv = document.getElementById("seq");                                                          
+                  sequenceDiv.innerHTML = txt[p];                    
+                  txtSeq(++p);
+              }, wait);
+  
+          } else if (txt.length == p) {
+              txtSeq(0);
+          }
+  
+      }
+  </script>
+
+  <!-- Slideshow container -->
+  <div class="slideshow-container">
+  <div class="mySlides fade w3-center">
+    <img src="https://i.imgur.com/xBd9yyu.jpg" 
+      style="width:145%; height:100%">
+  </div>
+      
+  <div class="mySlides fade w3-center">
+    <img src="https://i.imgur.com/5xoiGxY.jpg" 
+    style="width:145%; height:100%">
+  </div>
+      
+  <div class="mySlides fade w3-center">
+    <img src="https://i.imgur.com/lJszPlh.jpg" 
+    style="width:145%; height:100%">
+  </div>
+  <!--Prev/Next-->
+  <a class="prev" onclick="addSlides(-1)">&#10094;</a>
+  <a class="next" onclick="addSlides(1)">&#10095;</a>
+
+  </div>
+  <br>
+  
+  <div style="text-align:center">
+    <span class="dot" onclick="curSlide(1)"></span> 
+    <span class="dot" onclick="curSlide(2)"></span> 
+    <span class="dot" onclick="curSlide(3)"></span> 
+  </div>
+
+  <!--Slide Script-->
+    <script>
+      var slIndex = 1;
+      shSlides(slIndex);
+
+      function addSlides(r) {
+        shSlides(slIndex += r);
+      }
+
+      function curSlide(r) {
+        shSlides(slIndex = r);
+      }
+
+      function shSlides(r) {
+        var m;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (r > slides.length) {slIndex = 1}    
+        if (r < 1) {slIndex = slides.length}
+        for (m = 0; m < slides.length; m++) {
+          slides[m].style.display = "none";  
+        }
+        for (m = 0; m < dots.length; m++) {
+          dots[m].className = dots[m].className.replace(" active", "");
+        }
+      slides[slIndex-1].style.display = "block";  
+      dots[slIndex-1].className += " active";
+      }
+    </script>
+  
+  <!-- Footer -->
+  <footer class="w3-padding-60 w3-light-grey w3-small w3-center" id="footer">
+    <div class="w3-row-padding">
+        <div class="w3-center">
+            <h4><u>About</u></h4>
+            <p><a href="#">About us</a></p>
+            <p><a href="#">We're hiring</a></p>
+            <p><a href="#">Support Us</a></p>
+            <p><a href="#">Help</a></p>
+          </div>
+
+      <div class="w3-center">
+        <h4>Have any questions? Let us know. </h4>
+        <form action="/action_page.php" target="_blank">
+          <p><input class="w3-input w3-border" type="text" placeholder="Name" name="Name" required></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Email Address" name="Email Address" required></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Subject" name="Subject" required></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Message" name="Message" required></p>
+          <button type="submit" class="w3-button w3-block w3-red">Send</button>
+        </form>
+      </div>
+
+      <div class="w3-padding-60 w3-center w3-justify">
+        <h4>GleWare</h4>
+        <p><i class="fa fa-fw fa-map-marker"></i> 8655 N. Adale Avenue, Oceanport, NJ 07757</p>
+        <p><i class="fa fa-fw fa-phone"></i> 201)-523-0649</p>
+        <p><i class="fa fa-fw fa-envelope"></i> glewarenj@gmail.com</p>
+        <h4><u>We accept</u></h4>
+        <p><i class="fa fa-fw fa-paypal"></i> Paypal</p>
+        <p><i class="fa fa-fw fa-credit-card"></i> Debit/Credit</p>
+        <br>
+        <i class="fa fa-facebook-official w3-hover-opacity w3-large"></i>
+        <i class="fa fa-instagram w3-hover-opacity w3-large"></i>
+        <i class="fa fa-twitter w3-hover-opacity w3-large"></i>
+        <i class="fa fa-linkedin w3-hover-opacity w3-large"></i>
+      </div>
+    </div>
+  </footer>
+  <!-- End page content -->
+</div>
+
+</body>
+</html>
